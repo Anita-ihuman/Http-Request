@@ -4,9 +4,8 @@ import './Blog.css';
 import Posts from './Posts/Posts'
 
 import Post from "../../components/Post/Post";
-import FullPost from "./FullPost/FullPost";
-import NewPost from "./NewPost/NewPost";
 import "./Blog.css";
+import {Route} from 'react-router-dom'
 
 class Blog extends Component {
   render() {
@@ -23,8 +22,9 @@ class Blog extends Component {
               </li>
             </ul>
           </nav>
-            </header>
-            <Posts/>
+        </header>
+        <Route path="/" exact render={() => <h1>Hello</h1>} />
+        <Route path="/" exact render={() => <h1>Hello 2</h1>} />
       </div>
     );
   }
