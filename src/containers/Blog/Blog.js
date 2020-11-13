@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 // import axios from 'axios';
-import './Blog.css';
-import Posts from './Posts/Posts'
+import "./Blog.css";
+import Posts from "./Posts/Posts";
 
 import Post from "../../components/Post/Post";
 import "./Blog.css";
-import { Route, Link } from 'react-router-dom'
-import NewPost from './NewPost/NewPost'
+import { Route, NavLink } from "react-router-dom";
+import NewPost from "./NewPost/NewPost";
+import FullPost from './FullPost/FullPost'
 
 class Blog extends Component {
   render() {
@@ -16,14 +17,28 @@ class Blog extends Component {
           <nav>
             <ul>
               <li>
-                <Link to='/'>home</Link>
+                <NavLink
+                  to="/"
+                  exact
+                  activeClassName="my-active"
+                  activeStyle={{
+                    color: "#fa923f",
+                    textDecoration: "underline",
+                  }}
+                >
+                  home
+                </NavLink>
               </li>
               <li>
-                            <Link to={{
-                                pathname: '/new-post',
-                                hash: '#submit',
-                                search: '?quick-search=true'
-                }}>new post</Link>
+                <NavLink
+                  to={{
+                    pathname: "/new-post",
+                    hash: "#submit",
+                    search: "?quick-search=true",
+                  }}
+                >
+                  new post
+                </NavLink>
               </li>
             </ul>
           </nav>
@@ -32,6 +47,7 @@ class Blog extends Component {
         <Route path="/"  render={() => <h1>Hello 2</h1>} /> */}
         <Route path="/" exact component={Posts} />
         <Route path="/new-post" component={NewPost} />
+        <Route path="/:id" exact component={FullPost} />
       </div>
     );
   }

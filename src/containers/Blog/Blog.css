@@ -22,6 +22,7 @@ text-align: center;
     text-decoration: none;
 }
 .Blog a:hover,
+.Blog a:active,
 .Blog a:active{
-    color: #fa923f
+    color: #fa923f;
 }
