@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Post from '../../../components/Post/Post'
-import './Posts.css';
+import Post from "../../../components/Post/Post";
+import "./Posts.css";
 import axios from "../../../axios";
 
 class Posts extends Component {
@@ -8,7 +8,9 @@ class Posts extends Component {
     posts: [],
   };
   componentDidMount() {
-    axios.get("/posts")
+    console.log(this.props);
+    axios
+      .get("/posts")
       .then((response) => {
         const posts = response.data.slice(0, 4);
         const updatedPosts = posts.map((post) => {
