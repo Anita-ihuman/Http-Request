@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 // import axios from 'axios';
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
-
-import "./Blog.css";
-import Posts from "./Posts/Posts";
 import asyncComponent from "../../hoc/asyncComponent";
+import Posts from "./Posts/Posts";
+import NewPost from './NewPost/NewPost'
+import "./Blog.css";
 // import NewPost from './NewPost/NewPost';
 
 const AsyncNewPost = asyncComponent(() => {
